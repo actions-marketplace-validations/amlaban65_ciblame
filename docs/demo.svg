@@ -1,122 +1,298 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1128" height="568" viewBox="0 0 1128 568" role="img" aria-label="ciblame terminal output">
 <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 <circle cx="22" cy="20" r="6" fill="#ff5f57"/><circle cx="42" cy="20" r="6" fill="#febc2e"/><circle cx="62" cy="20" r="6" fill="#28c840"/>
-<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="13" fill="#c9d1d9" xml:space="preserve">
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="13" fill="#c9d1d9">
 <text x="22.0" y="52" textLength="54.6" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">ciblame</text>
-<text x="76.6" y="52" textLength="7.8" lengthAdjust="spacingAndGlyphs"> </text>
 <text x="84.4" y="52" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">·</text>
-<text x="92.2" y="52" textLength="132.6" lengthAdjust="spacingAndGlyphs"> acme/storefront </text>
+<text x="100.0" y="52" textLength="117.0" lengthAdjust="spacingAndGlyphs">acme/storefront</text>
 <text x="224.8" y="52" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">·</text>
-<text x="232.6" y="52" textLength="234.0" lengthAdjust="spacingAndGlyphs"> Oct 2 – Nov 1, 2026 (30 days)</text>
-<text x="22.0" y="71" textLength="374.4" lengthAdjust="spacingAndGlyphs">1,005 runs · 3,130 jobs · 20,814 billable min · </text>
-<text x="396.4" y="71" textLength="46.8" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">≈ $192</text>
-<text x="443.2" y="71" textLength="109.2" lengthAdjust="spacingAndGlyphs"> at list price</text>
-<text x="22.0" y="109" textLength="273.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">███████████████████████████████████</text>
+<text x="240.4" y="52" textLength="23.4" lengthAdjust="spacingAndGlyphs">Oct</text>
+<text x="271.6" y="52" textLength="7.8" lengthAdjust="spacingAndGlyphs">2</text>
+<text x="287.2" y="52" textLength="7.8" lengthAdjust="spacingAndGlyphs">–</text>
+<text x="302.8" y="52" textLength="23.4" lengthAdjust="spacingAndGlyphs">Nov</text>
+<text x="334.0" y="52" textLength="15.6" lengthAdjust="spacingAndGlyphs">1,</text>
+<text x="357.4" y="52" textLength="31.2" lengthAdjust="spacingAndGlyphs">2026</text>
+<text x="396.4" y="52" textLength="23.4" lengthAdjust="spacingAndGlyphs">(30</text>
+<text x="427.6" y="52" textLength="39.0" lengthAdjust="spacingAndGlyphs">days)</text>
+<text x="22.0" y="71" textLength="39.0" lengthAdjust="spacingAndGlyphs">1,005</text>
+<text x="68.8" y="71" textLength="31.2" lengthAdjust="spacingAndGlyphs">runs</text>
+<text x="107.8" y="71" textLength="7.8" lengthAdjust="spacingAndGlyphs">·</text>
+<text x="123.4" y="71" textLength="39.0" lengthAdjust="spacingAndGlyphs">3,130</text>
+<text x="170.2" y="71" textLength="31.2" lengthAdjust="spacingAndGlyphs">jobs</text>
+<text x="209.2" y="71" textLength="7.8" lengthAdjust="spacingAndGlyphs">·</text>
+<text x="224.8" y="71" textLength="46.8" lengthAdjust="spacingAndGlyphs">20,814</text>
+<text x="279.4" y="71" textLength="62.4" lengthAdjust="spacingAndGlyphs">billable</text>
+<text x="349.6" y="71" textLength="23.4" lengthAdjust="spacingAndGlyphs">min</text>
+<text x="380.8" y="71" textLength="7.8" lengthAdjust="spacingAndGlyphs">·</text>
+<text x="396.4" y="71" textLength="7.8" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">≈</text>
+<text x="412.0" y="71" textLength="31.2" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">$192</text>
+<text x="451.0" y="71" textLength="15.6" lengthAdjust="spacingAndGlyphs">at</text>
+<text x="474.4" y="71" textLength="31.2" lengthAdjust="spacingAndGlyphs">list</text>
+<text x="513.4" y="71" textLength="39.0" lengthAdjust="spacingAndGlyphs">price</text>
+<rect x="22.0" y="96" width="273.0" height="16" fill="#d2a8ff"/>
 <text x="295.0" y="109" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">▓▓▓▓▓</text>
 <text x="334.0" y="109" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill="#7ee787">░░░░░░░░</text>
-<text x="22.0" y="128" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">█ agents</text>
-<text x="84.4" y="128" textLength="54.6" lengthAdjust="spacingAndGlyphs"> 73%   </text>
-<text x="139.0" y="128" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">▓ bots</text>
-<text x="185.8" y="128" textLength="54.6" lengthAdjust="spacingAndGlyphs"> 10%   </text>
-<text x="240.4" y="128" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill="#7ee787">░ humans</text>
-<text x="302.8" y="128" textLength="31.2" lengthAdjust="spacingAndGlyphs"> 17%</text>
+<rect x="22.0" y="115" width="7.8" height="16" fill="#d2a8ff"/>
+<text x="37.6" y="128" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agents</text>
+<text x="92.2" y="128" textLength="23.4" lengthAdjust="spacingAndGlyphs">73%</text>
+<text x="139.0" y="128" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">▓</text>
+<text x="154.6" y="128" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">bots</text>
+<text x="193.6" y="128" textLength="23.4" lengthAdjust="spacingAndGlyphs">10%</text>
+<text x="240.4" y="128" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#7ee787">░</text>
+<text x="256.0" y="128" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#7ee787">humans</text>
+<text x="310.6" y="128" textLength="23.4" lengthAdjust="spacingAndGlyphs">17%</text>
 <text x="22.0" y="166" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">WHO</text>
-<text x="45.4" y="166" textLength="140.4" lengthAdjust="spacingAndGlyphs">                  </text>
 <text x="185.8" y="166" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">KIND</text>
-<text x="217.0" y="166" textLength="23.4" lengthAdjust="spacingAndGlyphs">   </text>
 <text x="240.4" y="166" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">RUNS</text>
-<text x="271.6" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
 <text x="287.2" y="166" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MINUTES</text>
-<text x="341.8" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
 <text x="357.4" y="166" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">SHARE</text>
-<text x="396.4" y="166" textLength="132.6" lengthAdjust="spacingAndGlyphs">                 </text>
-<text x="529.0" y="166" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">EST $</text>
-<text x="568.0" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
+<text x="529.0" y="166" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">EST</text>
+<text x="560.2" y="166" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">$</text>
 <text x="583.6" y="166" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">FAIL</text>
-<text x="614.8" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
 <text x="630.4" y="166" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MERGED</text>
-<text x="677.2" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
 <text x="692.8" y="166" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MIN/MERGE</text>
-<text x="763.0" y="166" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
 <text x="778.6" y="166" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">UNMERGED</text>
-<text x="22.0" y="185" textLength="109.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">GitHub Copilot</text>
-<text x="131.2" y="185" textLength="54.6" lengthAdjust="spacingAndGlyphs">       </text>
+<text x="22.0" y="185" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">GitHub</text>
+<text x="76.6" y="185" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Copilot</text>
 <text x="185.8" y="185" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agent</text>
-<text x="224.8" y="185" textLength="78.0" lengthAdjust="spacingAndGlyphs">   424    </text>
+<text x="248.2" y="185" textLength="23.4" lengthAdjust="spacingAndGlyphs">424</text>
 <text x="302.8" y="185" textLength="39.0" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">9,480</text>
-<text x="341.8" y="185" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="185" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff"> 45.5% ████████████</text>
-<text x="505.6" y="185" textLength="335.4" lengthAdjust="spacingAndGlyphs">  $84.33   24%   19/34        467     3,616</text>
-<text x="22.0" y="204" textLength="132.6" lengthAdjust="spacingAndGlyphs" fill="#7ee787">humans (5 people)</text>
-<text x="154.6" y="204" textLength="31.2" lengthAdjust="spacingAndGlyphs">    </text>
+<text x="365.2" y="185" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">45.5%</text>
+<rect x="412.0" y="172" width="93.6" height="16" fill="#d2a8ff"/>
+<text x="521.2" y="185" textLength="46.8" lengthAdjust="spacingAndGlyphs">$84.33</text>
+<text x="591.4" y="185" textLength="23.4" lengthAdjust="spacingAndGlyphs">24%</text>
+<text x="638.2" y="185" textLength="39.0" lengthAdjust="spacingAndGlyphs">19/34</text>
+<text x="739.6" y="185" textLength="23.4" lengthAdjust="spacingAndGlyphs">467</text>
+<text x="802.0" y="185" textLength="39.0" lengthAdjust="spacingAndGlyphs">3,616</text>
+<text x="22.0" y="204" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#7ee787">humans</text>
+<text x="76.6" y="204" textLength="15.6" lengthAdjust="spacingAndGlyphs" fill="#7ee787">(5</text>
+<text x="100.0" y="204" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill="#7ee787">people)</text>
 <text x="185.8" y="204" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#7ee787">human</text>
-<text x="224.8" y="204" textLength="78.0" lengthAdjust="spacingAndGlyphs">   158    </text>
+<text x="248.2" y="204" textLength="23.4" lengthAdjust="spacingAndGlyphs">158</text>
 <text x="302.8" y="204" textLength="39.0" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">3,489</text>
-<text x="341.8" y="204" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="204" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#7ee787"> 16.8% ████▍       </text>
-<text x="505.6" y="204" textLength="335.4" lengthAdjust="spacingAndGlyphs">  $29.05  3.8%   38/40         55        17</text>
-<text x="22.0" y="223" textLength="85.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Claude Code</text>
-<text x="107.8" y="223" textLength="78.0" lengthAdjust="spacingAndGlyphs">          </text>
+<text x="365.2" y="204" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#7ee787">16.8%</text>
+<rect x="412.0" y="191" width="31.2" height="16" fill="#7ee787"/>
+<text x="443.2" y="204" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#7ee787">▍</text>
+<text x="521.2" y="204" textLength="46.8" lengthAdjust="spacingAndGlyphs">$29.05</text>
+<text x="583.6" y="204" textLength="31.2" lengthAdjust="spacingAndGlyphs">3.8%</text>
+<text x="638.2" y="204" textLength="39.0" lengthAdjust="spacingAndGlyphs">38/40</text>
+<text x="747.4" y="204" textLength="15.6" lengthAdjust="spacingAndGlyphs">55</text>
+<text x="825.4" y="204" textLength="15.6" lengthAdjust="spacingAndGlyphs">17</text>
+<text x="22.0" y="223" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Claude</text>
+<text x="76.6" y="223" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Code</text>
 <text x="185.8" y="223" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agent</text>
-<text x="224.8" y="223" textLength="78.0" lengthAdjust="spacingAndGlyphs">   151    </text>
+<text x="248.2" y="223" textLength="23.4" lengthAdjust="spacingAndGlyphs">151</text>
 <text x="302.8" y="223" textLength="39.0" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">3,303</text>
-<text x="341.8" y="223" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="223" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff"> 15.9% ████▏       </text>
-<text x="505.6" y="223" textLength="335.4" lengthAdjust="spacingAndGlyphs">  $27.22   16%   18/22        165       589</text>
-<text x="22.0" y="242" textLength="93.6" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">OpenAI Codex</text>
-<text x="115.6" y="242" textLength="70.2" lengthAdjust="spacingAndGlyphs">         </text>
+<text x="365.2" y="223" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">15.9%</text>
+<rect x="412.0" y="210" width="31.2" height="16" fill="#d2a8ff"/>
+<text x="443.2" y="223" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">▏</text>
+<text x="521.2" y="223" textLength="46.8" lengthAdjust="spacingAndGlyphs">$27.22</text>
+<text x="591.4" y="223" textLength="23.4" lengthAdjust="spacingAndGlyphs">16%</text>
+<text x="638.2" y="223" textLength="39.0" lengthAdjust="spacingAndGlyphs">18/22</text>
+<text x="739.6" y="223" textLength="23.4" lengthAdjust="spacingAndGlyphs">165</text>
+<text x="817.6" y="223" textLength="23.4" lengthAdjust="spacingAndGlyphs">589</text>
+<text x="22.0" y="242" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">OpenAI</text>
+<text x="76.6" y="242" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Codex</text>
 <text x="185.8" y="242" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agent</text>
-<text x="224.8" y="242" textLength="78.0" lengthAdjust="spacingAndGlyphs">    56    </text>
+<text x="256.0" y="242" textLength="15.6" lengthAdjust="spacingAndGlyphs">56</text>
 <text x="302.8" y="242" textLength="39.0" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">1,299</text>
-<text x="341.8" y="242" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="242" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">  6.2% █▋          </text>
-<text x="505.6" y="242" textLength="335.4" lengthAdjust="spacingAndGlyphs">  $11.66   16%   11/14        118       329</text>
-<text x="22.0" y="261" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">scheduled workflows</text>
-<text x="170.2" y="261" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
+<text x="373.0" y="242" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">6.2%</text>
+<rect x="412.0" y="229" width="7.8" height="16" fill="#d2a8ff"/>
+<text x="419.8" y="242" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">▋</text>
+<text x="521.2" y="242" textLength="46.8" lengthAdjust="spacingAndGlyphs">$11.66</text>
+<text x="591.4" y="242" textLength="23.4" lengthAdjust="spacingAndGlyphs">16%</text>
+<text x="638.2" y="242" textLength="39.0" lengthAdjust="spacingAndGlyphs">11/14</text>
+<text x="739.6" y="242" textLength="23.4" lengthAdjust="spacingAndGlyphs">118</text>
+<text x="817.6" y="242" textLength="23.4" lengthAdjust="spacingAndGlyphs">329</text>
+<text x="22.0" y="261" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">scheduled</text>
+<text x="100.0" y="261" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">workflows</text>
 <text x="185.8" y="261" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">bot</text>
-<text x="209.2" y="261" textLength="93.6" lengthAdjust="spacingAndGlyphs">      29    </text>
+<text x="256.0" y="261" textLength="15.6" lengthAdjust="spacingAndGlyphs">29</text>
 <text x="302.8" y="261" textLength="39.0" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">1,259</text>
-<text x="341.8" y="261" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="261" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">  6.0% █▋          </text>
-<text x="505.6" y="261" textLength="335.4" lengthAdjust="spacingAndGlyphs">  $24.86   10%       –          –         –</text>
+<text x="373.0" y="261" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">6.0%</text>
+<rect x="412.0" y="248" width="7.8" height="16" fill="#56d4dd"/>
+<text x="419.8" y="261" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">▋</text>
+<text x="521.2" y="261" textLength="46.8" lengthAdjust="spacingAndGlyphs">$24.86</text>
+<text x="591.4" y="261" textLength="23.4" lengthAdjust="spacingAndGlyphs">10%</text>
+<text x="669.4" y="261" textLength="7.8" lengthAdjust="spacingAndGlyphs">–</text>
+<text x="755.2" y="261" textLength="7.8" lengthAdjust="spacingAndGlyphs">–</text>
+<text x="833.2" y="261" textLength="7.8" lengthAdjust="spacingAndGlyphs">–</text>
 <text x="22.0" y="280" textLength="78.0" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">Dependabot</text>
-<text x="100.0" y="280" textLength="85.8" lengthAdjust="spacingAndGlyphs">           </text>
 <text x="185.8" y="280" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">bot</text>
-<text x="209.2" y="280" textLength="109.2" lengthAdjust="spacingAndGlyphs">      65      </text>
+<text x="256.0" y="280" textLength="15.6" lengthAdjust="spacingAndGlyphs">65</text>
 <text x="318.4" y="280" textLength="23.4" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">879</text>
-<text x="341.8" y="280" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="280" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">  4.2% █▏          </text>
-<text x="505.6" y="280" textLength="335.4" lengthAdjust="spacingAndGlyphs">   $7.54  1.5%   17/26         45       256</text>
+<text x="373.0" y="280" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">4.2%</text>
+<rect x="412.0" y="267" width="7.8" height="16" fill="#56d4dd"/>
+<text x="419.8" y="280" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#56d4dd">▏</text>
+<text x="529.0" y="280" textLength="39.0" lengthAdjust="spacingAndGlyphs">$7.54</text>
+<text x="583.6" y="280" textLength="31.2" lengthAdjust="spacingAndGlyphs">1.5%</text>
+<text x="638.2" y="280" textLength="39.0" lengthAdjust="spacingAndGlyphs">17/26</text>
+<text x="747.4" y="280" textLength="15.6" lengthAdjust="spacingAndGlyphs">45</text>
+<text x="817.6" y="280" textLength="23.4" lengthAdjust="spacingAndGlyphs">256</text>
 <text x="22.0" y="299" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Devin</text>
-<text x="61.0" y="299" textLength="124.8" lengthAdjust="spacingAndGlyphs">                </text>
 <text x="185.8" y="299" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agent</text>
-<text x="224.8" y="299" textLength="93.6" lengthAdjust="spacingAndGlyphs">    42      </text>
+<text x="256.0" y="299" textLength="15.6" lengthAdjust="spacingAndGlyphs">42</text>
 <text x="318.4" y="299" textLength="23.4" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">776</text>
-<text x="341.8" y="299" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="299" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">  3.7% █           </text>
-<text x="505.6" y="299" textLength="335.4" lengthAdjust="spacingAndGlyphs">   $5.32   36%     1/7        630       505</text>
-<text x="22.0" y="318" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Copilot code review</text>
-<text x="170.2" y="318" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
+<text x="373.0" y="299" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">3.7%</text>
+<rect x="412.0" y="286" width="7.8" height="16" fill="#d2a8ff"/>
+<text x="529.0" y="299" textLength="39.0" lengthAdjust="spacingAndGlyphs">$5.32</text>
+<text x="591.4" y="299" textLength="23.4" lengthAdjust="spacingAndGlyphs">36%</text>
+<text x="653.8" y="299" textLength="23.4" lengthAdjust="spacingAndGlyphs">1/7</text>
+<text x="739.6" y="299" textLength="23.4" lengthAdjust="spacingAndGlyphs">630</text>
+<text x="817.6" y="299" textLength="23.4" lengthAdjust="spacingAndGlyphs">505</text>
+<text x="22.0" y="318" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">Copilot</text>
+<text x="84.4" y="318" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">code</text>
+<text x="123.4" y="318" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">review</text>
 <text x="185.8" y="318" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">agent</text>
-<text x="224.8" y="318" textLength="93.6" lengthAdjust="spacingAndGlyphs">    80      </text>
+<text x="256.0" y="318" textLength="15.6" lengthAdjust="spacingAndGlyphs">80</text>
 <text x="318.4" y="318" textLength="23.4" lengthAdjust="spacingAndGlyphs" font-weight="700" fill-opacity="1" fill="#f0f6fc">329</text>
-<text x="341.8" y="318" textLength="15.6" lengthAdjust="spacingAndGlyphs">  </text>
-<text x="357.4" y="318" textLength="148.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">  1.6% ▍           </text>
-<text x="505.6" y="318" textLength="335.4" lengthAdjust="spacingAndGlyphs">   $1.97    0%   56/80          6        88</text>
+<text x="373.0" y="318" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">1.6%</text>
+<text x="412.0" y="318" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#d2a8ff">▍</text>
+<text x="529.0" y="318" textLength="39.0" lengthAdjust="spacingAndGlyphs">$1.97</text>
+<text x="599.2" y="318" textLength="15.6" lengthAdjust="spacingAndGlyphs">0%</text>
+<text x="638.2" y="318" textLength="39.0" lengthAdjust="spacingAndGlyphs">56/80</text>
+<text x="755.2" y="318" textLength="7.8" lengthAdjust="spacingAndGlyphs">6</text>
+<text x="825.4" y="318" textLength="15.6" lengthAdjust="spacingAndGlyphs">88</text>
 <text x="22.0" y="356" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="356" textLength="553.8" lengthAdjust="spacingAndGlyphs"> AI agents used 73% of CI minutes (15,187 min, ≈ $131) across 753 runs.</text>
+<text x="37.6" y="356" textLength="15.6" lengthAdjust="spacingAndGlyphs">AI</text>
+<text x="61.0" y="356" textLength="46.8" lengthAdjust="spacingAndGlyphs">agents</text>
+<text x="115.6" y="356" textLength="31.2" lengthAdjust="spacingAndGlyphs">used</text>
+<text x="154.6" y="356" textLength="23.4" lengthAdjust="spacingAndGlyphs">73%</text>
+<text x="185.8" y="356" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="209.2" y="356" textLength="15.6" lengthAdjust="spacingAndGlyphs">CI</text>
+<text x="232.6" y="356" textLength="54.6" lengthAdjust="spacingAndGlyphs">minutes</text>
+<text x="295.0" y="356" textLength="54.6" lengthAdjust="spacingAndGlyphs">(15,187</text>
+<text x="357.4" y="356" textLength="31.2" lengthAdjust="spacingAndGlyphs">min,</text>
+<text x="396.4" y="356" textLength="7.8" lengthAdjust="spacingAndGlyphs">≈</text>
+<text x="412.0" y="356" textLength="39.0" lengthAdjust="spacingAndGlyphs">$131)</text>
+<text x="458.8" y="356" textLength="46.8" lengthAdjust="spacingAndGlyphs">across</text>
+<text x="513.4" y="356" textLength="23.4" lengthAdjust="spacingAndGlyphs">753</text>
+<text x="544.6" y="356" textLength="39.0" lengthAdjust="spacingAndGlyphs">runs.</text>
 <text x="22.0" y="375" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="375" textLength="507.0" lengthAdjust="spacingAndGlyphs"> Biggest consumer: GitHub Copilot with 9,480 min (46% of all CI).</text>
+<text x="37.6" y="375" textLength="54.6" lengthAdjust="spacingAndGlyphs">Biggest</text>
+<text x="100.0" y="375" textLength="70.2" lengthAdjust="spacingAndGlyphs">consumer:</text>
+<text x="178.0" y="375" textLength="46.8" lengthAdjust="spacingAndGlyphs">GitHub</text>
+<text x="232.6" y="375" textLength="54.6" lengthAdjust="spacingAndGlyphs">Copilot</text>
+<text x="295.0" y="375" textLength="31.2" lengthAdjust="spacingAndGlyphs">with</text>
+<text x="334.0" y="375" textLength="39.0" lengthAdjust="spacingAndGlyphs">9,480</text>
+<text x="380.8" y="375" textLength="23.4" lengthAdjust="spacingAndGlyphs">min</text>
+<text x="412.0" y="375" textLength="31.2" lengthAdjust="spacingAndGlyphs">(46%</text>
+<text x="451.0" y="375" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="474.4" y="375" textLength="23.4" lengthAdjust="spacingAndGlyphs">all</text>
+<text x="505.6" y="375" textLength="31.2" lengthAdjust="spacingAndGlyphs">CI).</text>
 <text x="22.0" y="394" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="394" textLength="678.6" lengthAdjust="spacingAndGlyphs"> 5,127 agent minutes (34% of agent CI) went to 31 pull requests closed without merging.</text>
+<text x="37.6" y="394" textLength="39.0" lengthAdjust="spacingAndGlyphs">5,127</text>
+<text x="84.4" y="394" textLength="39.0" lengthAdjust="spacingAndGlyphs">agent</text>
+<text x="131.2" y="394" textLength="54.6" lengthAdjust="spacingAndGlyphs">minutes</text>
+<text x="193.6" y="394" textLength="31.2" lengthAdjust="spacingAndGlyphs">(34%</text>
+<text x="232.6" y="394" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="256.0" y="394" textLength="39.0" lengthAdjust="spacingAndGlyphs">agent</text>
+<text x="302.8" y="394" textLength="23.4" lengthAdjust="spacingAndGlyphs">CI)</text>
+<text x="334.0" y="394" textLength="31.2" lengthAdjust="spacingAndGlyphs">went</text>
+<text x="373.0" y="394" textLength="15.6" lengthAdjust="spacingAndGlyphs">to</text>
+<text x="396.4" y="394" textLength="15.6" lengthAdjust="spacingAndGlyphs">31</text>
+<text x="419.8" y="394" textLength="31.2" lengthAdjust="spacingAndGlyphs">pull</text>
+<text x="458.8" y="394" textLength="62.4" lengthAdjust="spacingAndGlyphs">requests</text>
+<text x="529.0" y="394" textLength="46.8" lengthAdjust="spacingAndGlyphs">closed</text>
+<text x="583.6" y="394" textLength="54.6" lengthAdjust="spacingAndGlyphs">without</text>
+<text x="646.0" y="394" textLength="62.4" lengthAdjust="spacingAndGlyphs">merging.</text>
 <text x="22.0" y="413" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="413" textLength="569.4" lengthAdjust="spacingAndGlyphs"> Agent PRs needed 3.2× the CI per merged PR of human PRs (176 vs 55 min).</text>
+<text x="37.6" y="413" textLength="39.0" lengthAdjust="spacingAndGlyphs">Agent</text>
+<text x="84.4" y="413" textLength="23.4" lengthAdjust="spacingAndGlyphs">PRs</text>
+<text x="115.6" y="413" textLength="46.8" lengthAdjust="spacingAndGlyphs">needed</text>
+<text x="170.2" y="413" textLength="31.2" lengthAdjust="spacingAndGlyphs">3.2×</text>
+<text x="209.2" y="413" textLength="23.4" lengthAdjust="spacingAndGlyphs">the</text>
+<text x="240.4" y="413" textLength="15.6" lengthAdjust="spacingAndGlyphs">CI</text>
+<text x="263.8" y="413" textLength="23.4" lengthAdjust="spacingAndGlyphs">per</text>
+<text x="295.0" y="413" textLength="46.8" lengthAdjust="spacingAndGlyphs">merged</text>
+<text x="349.6" y="413" textLength="15.6" lengthAdjust="spacingAndGlyphs">PR</text>
+<text x="373.0" y="413" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="396.4" y="413" textLength="39.0" lengthAdjust="spacingAndGlyphs">human</text>
+<text x="443.2" y="413" textLength="23.4" lengthAdjust="spacingAndGlyphs">PRs</text>
+<text x="474.4" y="413" textLength="31.2" lengthAdjust="spacingAndGlyphs">(176</text>
+<text x="513.4" y="413" textLength="15.6" lengthAdjust="spacingAndGlyphs">vs</text>
+<text x="536.8" y="413" textLength="15.6" lengthAdjust="spacingAndGlyphs">55</text>
+<text x="560.2" y="413" textLength="39.0" lengthAdjust="spacingAndGlyphs">min).</text>
 <text x="22.0" y="432" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="432" textLength="421.2" lengthAdjust="spacingAndGlyphs"> Agent runs failed 20% of the time vs 3.8% for humans.</text>
+<text x="37.6" y="432" textLength="39.0" lengthAdjust="spacingAndGlyphs">Agent</text>
+<text x="84.4" y="432" textLength="31.2" lengthAdjust="spacingAndGlyphs">runs</text>
+<text x="123.4" y="432" textLength="46.8" lengthAdjust="spacingAndGlyphs">failed</text>
+<text x="178.0" y="432" textLength="23.4" lengthAdjust="spacingAndGlyphs">20%</text>
+<text x="209.2" y="432" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="232.6" y="432" textLength="23.4" lengthAdjust="spacingAndGlyphs">the</text>
+<text x="263.8" y="432" textLength="31.2" lengthAdjust="spacingAndGlyphs">time</text>
+<text x="302.8" y="432" textLength="15.6" lengthAdjust="spacingAndGlyphs">vs</text>
+<text x="326.2" y="432" textLength="31.2" lengthAdjust="spacingAndGlyphs">3.8%</text>
+<text x="365.2" y="432" textLength="23.4" lengthAdjust="spacingAndGlyphs">for</text>
+<text x="396.4" y="432" textLength="54.6" lengthAdjust="spacingAndGlyphs">humans.</text>
 <text x="22.0" y="451" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill="#e3b341">▸</text>
-<text x="29.8" y="451" textLength="943.8" lengthAdjust="spacingAndGlyphs"> 13% of agent minutes were the agents themselves running on Actions (sessions, reviews); the rest is CI on their changes.</text>
-<text x="22.0" y="489" textLength="1084.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MERGED = merged/total PRs · MIN/MERGE = CI minutes per merged PR, counting abandoned PRs · UNMERGED = minutes on PRs closed without merging</text>
-<text x="22.0" y="508" textLength="998.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">Costs are estimates at GitHub list prices (Linux $0.006/min, Windows $0.010, macOS $0.062; larger runners scaled by core count).</text>
-<text x="22.0" y="527" textLength="249.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">3 in-progress runs were skipped.</text>
+<text x="37.6" y="451" textLength="23.4" lengthAdjust="spacingAndGlyphs">13%</text>
+<text x="68.8" y="451" textLength="15.6" lengthAdjust="spacingAndGlyphs">of</text>
+<text x="92.2" y="451" textLength="39.0" lengthAdjust="spacingAndGlyphs">agent</text>
+<text x="139.0" y="451" textLength="54.6" lengthAdjust="spacingAndGlyphs">minutes</text>
+<text x="201.4" y="451" textLength="31.2" lengthAdjust="spacingAndGlyphs">were</text>
+<text x="240.4" y="451" textLength="23.4" lengthAdjust="spacingAndGlyphs">the</text>
+<text x="271.6" y="451" textLength="46.8" lengthAdjust="spacingAndGlyphs">agents</text>
+<text x="326.2" y="451" textLength="78.0" lengthAdjust="spacingAndGlyphs">themselves</text>
+<text x="412.0" y="451" textLength="54.6" lengthAdjust="spacingAndGlyphs">running</text>
+<text x="474.4" y="451" textLength="15.6" lengthAdjust="spacingAndGlyphs">on</text>
+<text x="497.8" y="451" textLength="54.6" lengthAdjust="spacingAndGlyphs">Actions</text>
+<text x="560.2" y="451" textLength="78.0" lengthAdjust="spacingAndGlyphs">(sessions,</text>
+<text x="646.0" y="451" textLength="70.2" lengthAdjust="spacingAndGlyphs">reviews);</text>
+<text x="724.0" y="451" textLength="23.4" lengthAdjust="spacingAndGlyphs">the</text>
+<text x="755.2" y="451" textLength="31.2" lengthAdjust="spacingAndGlyphs">rest</text>
+<text x="794.2" y="451" textLength="15.6" lengthAdjust="spacingAndGlyphs">is</text>
+<text x="817.6" y="451" textLength="15.6" lengthAdjust="spacingAndGlyphs">CI</text>
+<text x="841.0" y="451" textLength="15.6" lengthAdjust="spacingAndGlyphs">on</text>
+<text x="864.4" y="451" textLength="39.0" lengthAdjust="spacingAndGlyphs">their</text>
+<text x="911.2" y="451" textLength="62.4" lengthAdjust="spacingAndGlyphs">changes.</text>
+<text x="22.0" y="489" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MERGED</text>
+<text x="76.6" y="489" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">=</text>
+<text x="92.2" y="489" textLength="93.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">merged/total</text>
+<text x="193.6" y="489" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">PRs</text>
+<text x="224.8" y="489" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">·</text>
+<text x="240.4" y="489" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">MIN/MERGE</text>
+<text x="318.4" y="489" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">=</text>
+<text x="334.0" y="489" textLength="15.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">CI</text>
+<text x="357.4" y="489" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">minutes</text>
+<text x="419.8" y="489" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">per</text>
+<text x="451.0" y="489" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">merged</text>
+<text x="505.6" y="489" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">PR,</text>
+<text x="536.8" y="489" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">counting</text>
+<text x="607.0" y="489" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">abandoned</text>
+<text x="685.0" y="489" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">PRs</text>
+<text x="716.2" y="489" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">·</text>
+<text x="731.8" y="489" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">UNMERGED</text>
+<text x="802.0" y="489" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">=</text>
+<text x="817.6" y="489" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">minutes</text>
+<text x="880.0" y="489" textLength="15.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">on</text>
+<text x="903.4" y="489" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">PRs</text>
+<text x="934.6" y="489" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">closed</text>
+<text x="989.2" y="489" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">without</text>
+<text x="1051.6" y="489" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">merging</text>
+<text x="22.0" y="508" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">Costs</text>
+<text x="68.8" y="508" textLength="23.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">are</text>
+<text x="100.0" y="508" textLength="70.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">estimates</text>
+<text x="178.0" y="508" textLength="15.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">at</text>
+<text x="201.4" y="508" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">GitHub</text>
+<text x="256.0" y="508" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">list</text>
+<text x="295.0" y="508" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">prices</text>
+<text x="349.6" y="508" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">(Linux</text>
+<text x="404.2" y="508" textLength="85.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">$0.006/min,</text>
+<text x="497.8" y="508" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">Windows</text>
+<text x="560.2" y="508" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">$0.010,</text>
+<text x="622.6" y="508" textLength="39.0" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">macOS</text>
+<text x="669.4" y="508" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">$0.062;</text>
+<text x="731.8" y="508" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">larger</text>
+<text x="786.4" y="508" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">runners</text>
+<text x="848.8" y="508" textLength="46.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">scaled</text>
+<text x="903.4" y="508" textLength="15.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">by</text>
+<text x="926.8" y="508" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">core</text>
+<text x="965.8" y="508" textLength="54.6" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">count).</text>
+<text x="22.0" y="527" textLength="7.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">3</text>
+<text x="37.6" y="527" textLength="85.8" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">in-progress</text>
+<text x="131.2" y="527" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">runs</text>
+<text x="170.2" y="527" textLength="31.2" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">were</text>
+<text x="209.2" y="527" textLength="62.4" lengthAdjust="spacingAndGlyphs" fill-opacity="0.55">skipped.</text>
 </g>
 </svg>

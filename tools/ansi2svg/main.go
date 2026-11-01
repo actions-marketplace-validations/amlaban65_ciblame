@@ -97,7 +97,7 @@ func main() {
 	fmt.Fprintf(&b, `<svg xmlns="http://www.w3.org/2000/svg" width="%.0f" height="%d" viewBox="0 0 %.0f %d" role="img" aria-label="ciblame terminal output">`+"\n", w, h, w, h)
 	fmt.Fprintf(&b, `<rect width="100%%" height="100%%" rx="10" fill="#0d1117"/>`+"\n")
 	b.WriteString(`<circle cx="22" cy="20" r="6" fill="#ff5f57"/><circle cx="42" cy="20" r="6" fill="#febc2e"/><circle cx="62" cy="20" r="6" fill="#28c840"/>` + "\n")
-	fmt.Fprintf(&b, `<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="%d" fill="#c9d1d9" xml:space="preserve">`+"\n", fontSize)
+	fmt.Fprintf(&b, `<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="%d" fill="#c9d1d9">`+"\n", fontSize)
 	for i, segs := range lines {
 		y := padTop + i*lineH
 		for _, s := range segs {
@@ -114,13 +114,66 @@ func main() {
 			if s.st.dim {
 				attrs += ` fill-opacity="0.55"`
 			}
-			x := float64(padX) + float64(s.col)*charW
-			// textLength pins each run to the grid even if a glyph falls back to another font.
-			n := utf8.RuneCountInString(s.text)
-			fmt.Fprintf(&b, `<text x="%.1f" y="%d" textLength="%.1f" lengthAdjust="spacingAndGlyphs"%s>%s</text>`+"\n",
-				x, y, float64(n)*charW, attrs, html.EscapeString(s.text))
+			// Emit each word at its own grid column. Browsers collapse
+			// whitespace inside <text> unless told otherwise, and xml:space on
+			// a parent group isn't honoured everywhere, so spaces are never
+			// sent; positions alone produce the alignment.
+			for _, w := range words(s.text) {
+				x := float64(padX) + float64(s.col+w.col)*charW
+				// Draw runs of full blocks as one rectangle; glyph-by-glyph
+				// they show hairline seams in most browsers.
+				if trimmed := strings.TrimLeft(w.text, "█"); trimmed != w.text {
+					blocks := utf8.RuneCountInString(w.text) - utf8.RuneCountInString(trimmed)
+					fill := s.st.fg
+					if fill == "" {
+						fill = "#c9d1d9"
+					}
+					fmt.Fprintf(&b, `<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s"/>`+"\n",
+						x, y-13, float64(blocks)*charW, 16, fill)
+					if trimmed == "" {
+						continue
+					}
+					x += float64(blocks) * charW
+					w.text = trimmed
+				}
+				n := utf8.RuneCountInString(w.text)
+				// textLength keeps the word on the grid if the font's advance
+				// differs slightly from charW.
+				fmt.Fprintf(&b, `<text x="%.1f" y="%d" textLength="%.1f" lengthAdjust="spacingAndGlyphs"%s>%s</text>`+"\n",
+					x, y, float64(n)*charW, attrs, html.EscapeString(w.text))
+			}
 		}
 	}
 	b.WriteString("</g>\n</svg>\n")
 	os.Stdout.WriteString(b.String())
+}
+
+type word struct {
+	col  int // rune offset within the segment
+	text string
+}
+
+// words splits s on spaces, keeping each word's rune column.
+func words(s string) []word {
+	var out []word
+	col, start := 0, -1
+	var cur []rune
+	for _, r := range s {
+		if r == ' ' {
+			if start >= 0 {
+				out = append(out, word{start, string(cur)})
+				start, cur = -1, cur[:0]
+			}
+		} else {
+			if start < 0 {
+				start = col
+			}
+			cur = append(cur, r)
+		}
+		col++
+	}
+	if start >= 0 {
+		out = append(out, word{start, string(cur)})
+	}
+	return out
 }
