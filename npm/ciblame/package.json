@@ -1,0 +1,45 @@
+{
+  "name": "ciblame",
+  "version": "0.0.0",
+  "description": "See where your GitHub Actions minutes go: CI usage and cost broken down by AI coding agent (Copilot, Claude Code, Codex, Devin, Cursor), bot and person.",
+  "keywords": [
+    "github-actions",
+    "ci",
+    "ci-cd",
+    "continuous-integration",
+    "cost",
+    "finops",
+    "billing",
+    "devops",
+    "ai-agents",
+    "coding-agents",
+    "copilot",
+    "claude-code",
+    "codex",
+    "devin",
+    "dependabot",
+    "cli"
+  ],
+  "homepage": "https://github.com/amlaban65/ciblame#readme",
+  "bugs": {
+    "url": "https://github.com/amlaban65/ciblame/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amlaban65/ciblame.git"
+  },
+  "license": "MIT",
+  "author": "Ahmed Laban",
+  "bin": {
+    "ciblame": "bin/ciblame.js"
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "optionalDependencies": {}
+}

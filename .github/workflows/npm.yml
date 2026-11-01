@@ -1,0 +1,39 @@
+name: npm
+
+# Publishes the ciblame npm packages from a GitHub release's binaries.
+# Runs after each tagged release (called from release.yml) and can be run by
+# hand from the Actions tab to publish an existing release.
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish, e.g. v0.1.0
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  id-token: write # npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # Checks out the workflow's own ref (the tag when called from a release,
+      # the selected branch when run by hand); binaries come from the release.
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TAG: ${{ inputs.tag }}
+        run: node npm/publish.mjs --tag "$TAG"
