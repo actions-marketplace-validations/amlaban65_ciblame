@@ -1,6 +1,6 @@
-# ciblame
+# ciblame: GitHub Actions cost per AI agent, bot and human
 
-**`git blame` for your CI bill.** See how many GitHub Actions minutes — and dollars — go to Copilot, Claude Code, Codex, Devin, Dependabot and the humans on your team.
+**`git blame` for your CI bill.** ciblame is a command-line tool that shows how many GitHub Actions minutes and dollars go to AI coding agents (GitHub Copilot, Claude Code, OpenAI Codex, Devin, Cursor), to bots like Dependabot and Renovate, and to the people on your team.
 
 [![CI](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml/badge.svg)](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/amlaban65/ciblame.svg)](https://pkg.go.dev/github.com/amlaban65/ciblame)
@@ -13,11 +13,11 @@
 
 ## Why
 
-Coding agents don't push when the work is ready — they push to *find out* if it's ready. Every iteration is a CI run.
+AI coding agents use CI as their test loop. Each attempt at getting the build green is another workflow run, and a single agent PR can rack up dozens of them.
 
 - GitHub reported agent-opened pull requests rising from about **4 million in Sept 2025 to over 17 million in March 2026**, and Actions compute hitting **2.1 billion minutes in a single week** ([source](https://tianpan.co/blog/2026/06/02/the-coding-agent-ci-bill-that-doubled-without-a-postmortem)).
 - Since **June 1, 2026**, Copilot code review on private repos [consumes Actions minutes](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/) on top of AI credits.
-- GitHub's billing shows minutes per repo and workflow — not per agent. And when an agent works through a person's account (Claude Code, Codex, Cursor), the bill quietly credits that person.
+- GitHub's billing breaks minutes down by repo and workflow, not by agent. When an agent works through someone's account (Claude Code, Codex, Cursor), its usage shows up under that person's name.
 
 ciblame answers the questions finance will eventually ask:
 
@@ -53,25 +53,25 @@ ciblame why https://github.com/acme/web/actions/runs/123456789
 | **EST $** | Minutes × [list price](#cost-estimates) for the runner each job used. |
 | **FAIL** | Share of runs whose final conclusion was a failure. |
 | **MERGED** | Merged / total pull requests behind those runs. |
-| **MIN/MERGE** | CI minutes per merged PR, *including* minutes spent on PRs that were abandoned — the full cost of landing one change. |
+| **MIN/MERGE** | CI minutes per merged PR, *including* minutes spent on PRs that were abandoned. In other words, what it really costs to land one change. |
 | **UNMERGED** | Minutes spent on PRs that were closed without merging. |
 
 Below the table, ciblame writes plain-language findings you can paste into a channel: agents' share of CI, the biggest consumer, minutes lost to abandoned PRs, CI per merged PR versus humans, and how much of the agents' time was the agent itself running on Actions (Copilot sessions and reviews) rather than CI on its changes.
 
-Humans are collapsed into a single row by default — this is a report about tools, not a leaderboard of people. Use `--per-human` if you want the breakdown.
+Humans are collapsed into a single row by default. This is a report about tools, not a leaderboard of people. Use `--per-human` if you want the breakdown.
 
 ## How attribution works
 
 Each run is attributed using the strongest signal available, in this order:
 
-1. **Workflow path** of an agent runtime — `dynamic/agents/copilot-pull-request-reviewer`, any other `dynamic/agents/*`, Copilot coding-agent sessions, agentic workflows (`*.lock.yml`)
+1. **Workflow path** of an agent runtime: `dynamic/agents/copilot-pull-request-reviewer`, any other `dynamic/agents/*`, Copilot coding-agent sessions, agentic workflows (`*.lock.yml`)
 2. **Scheduled runs** go to "scheduled workflows", not to whoever last edited the cron line
 3. **An agent's own account** as PR author or run actor (`Copilot`, `claude[bot]`, `devin-ai-integration[bot]`, …)
 4. **PR body markers** (`Generated with Claude Code`, agentic-workflow markers)
 5. **Commit trailers and e-mails** (`Co-authored-by: Copilot <…>`, `noreply@anthropic.com`, `cursoragent@cursor.com`)
 6. **Branch prefixes** (`copilot/`, `claude/`, `codex/`, `cursor/`, `devin/`, `dependabot/`)
 7. **Known bots**, then any other `[bot]` account
-8. **The human** who owns the change — the PR author, not whoever happened to push
+8. **The human** who owns the change (the PR author, not whoever happened to push)
 
 Steps 4–6 catch agents that work *through a person's account*; that person is recorded as the agent's operator (shown by `ciblame why` and in `--records` output). Runs are linked to their pull request even when GitHub leaves the run's PR list empty (fork PRs, merge queues, `refs/pull/N/head` dynamic runs), so CI on an agent's PR counts against the agent.
 
@@ -104,7 +104,7 @@ Branch         feat/remove-price-rounding
 | GitHub Agentic Workflows | workflow path, PR body |
 | Dependabot · Renovate · github-actions · pre-commit.ci · release-please · Mergify | login, branch, workflow path |
 
-Run `ciblame agents` for the current list. Signatures live in one JSON file — **[adding an agent](CONTRIBUTING.md#adding-or-fixing-an-agent-signature) is the easiest way to contribute.** You can also pass your own with `--signatures my-agents.json` (for in-house bots); they take priority over the built-ins.
+Run `ciblame agents` for the current list. Signatures live in one JSON file, and **[adding an agent](CONTRIBUTING.md#adding-or-fixing-an-agent-signature) is the easiest way to contribute.** You can also pass your own with `--signatures my-agents.json` (for in-house bots); they take priority over the built-ins.
 
 ## Run it weekly in GitHub Actions
 
@@ -127,7 +127,7 @@ jobs:
           since: 7d
 ```
 
-The report lands in the run's job summary; the action also exposes `report` (Markdown) and `json` file paths as outputs for posting to Slack or an issue. The default `GITHUB_TOKEN` can only read the current repository — for `org:` reports, pass a fine-grained token with read access to Actions and pull requests. See [`examples/`](examples/).
+The report lands in the run's job summary; the action also exposes `report` (Markdown) and `json` file paths as outputs for posting to Slack or an issue. The default `GITHUB_TOKEN` can only read the current repository, so for `org:` reports pass a fine-grained token with read access to Actions and pull requests. See [`examples/`](examples/).
 
 ## Flags
 
@@ -149,7 +149,7 @@ The report lands in the run's job summary; the action also exposes `report` (Mar
 
 ## Cost estimates
 
-Costs use GitHub's list prices for standard 2-core hosted runners as of January 2026 — **Linux $0.006/min, Windows $0.010/min, macOS $0.062/min** — with larger Linux/Windows runners scaled by core count. They are estimates, not your invoice:
+Costs use GitHub's list prices for standard 2-core hosted runners as of January 2026: **Linux $0.006/min, Windows $0.010/min, macOS $0.062/min**. Larger Linux and Windows runners are scaled by core count. They are estimates, not your invoice:
 
 - Included plan minutes and discounts aren't subtracted.
 - Public repositories don't pay for standard hosted runners; their costs are shown as list-price equivalents.
@@ -169,10 +169,10 @@ ciblame runs locally and talks only to the GitHub API you point it at. Nothing i
 
 ## Contributing
 
-Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Good first contributions:
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Good first contributions:
 
 - Add or correct an agent signature (a JSON entry plus a test case).
-- Report a run that was attributed wrongly — `ciblame why <url>` output helps.
+- Report a run that was attributed wrongly (the output of `ciblame why <url>` helps).
 - Roadmap items: budget thresholds that fail a workflow (`--max-agent-share`), GitLab CI and Buildkite sources, a `gh` extension, and Homebrew packaging.
 
 ## License

@@ -11,7 +11,7 @@ go run ./cmd/ciblame --demo        # sample report, no token needed
 go run ./cmd/ciblame your-org/your-repo
 ```
 
-Requirements: Go 1.23+. There are no third-party dependencies, and we'd like to keep it that way — please open an issue before adding one.
+Requirements: Go 1.23+. There are no third-party dependencies, and we'd like to keep it that way, so please open an issue before adding one.
 
 Layout:
 
@@ -54,14 +54,14 @@ Agents and bots are recognised by entries in [`internal/classify/signatures.json
 
 Please include:
 
-1. **Evidence** in the PR description — a link to a public PR, commit or run showing the signal, or the vendor's docs.
+1. **Evidence** in the PR description: a link to a public PR, commit or run showing the signal, or the vendor's docs.
 2. **A test case** in [`internal/classify/classify_test.go`](internal/classify/classify_test.go) using that evidence.
 
 `ciblame why <run-url> --signatures my.json` lets you check a signature against a real run before opening the PR.
 
 ## Reporting a wrong attribution
 
-Open an issue with the output of `ciblame why <run-url>` and what you expected. If the repository is private, redact names — the evidence line is what matters.
+Open an issue with the output of `ciblame why <run-url>` and what you expected. If the repository is private, redact names; the evidence line is what matters.
 
 ## Commit messages
 
