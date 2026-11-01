@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "signatures": [
+    {
+      "id": "copilot-code-review",
+      "name": "Copilot code review",
+      "kind": "agent",
+      "vendor": "GitHub",
+      "workflow_paths": [
+        "copilot-pull-request-reviewer"
+      ],
+      "notes": "Since 2026-06-01 Copilot code review on private repos runs as dynamic/agents/copilot-pull-request-reviewer and consumes Actions minutes."
+    },
+    {
+      "id": "github-advanced-security",
+      "name": "Code scanning AI (GHAS)",
+      "kind": "agent",
+      "vendor": "GitHub",
+      "workflow_paths": [
+        "dynamic/agents/github-advanced-security"
+      ],
+      "logins": [
+        "github-advanced-security[bot]"
+      ],
+      "notes": "Runs named 'Code scanning AI findings on PR #N'."
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "kind": "agent",
+      "vendor": "GitHub",
+      "workflow_paths": [
+        "copilot-swe-agent"
+      ],
+      "logins": [
+        "Copilot",
+        "copilot-swe-agent[bot]",
+        "copilot-swe-agent"
+      ],
+      "branch_prefixes": [
+        "copilot/"
+      ],
+      "trailers": [
+        "^co-authored-by:\\s*copilot(?:-swe-agent)?(?:\\[bot\\])?\\s*<"
+      ],
+      "emails": [
+        "223556219+Copilot@users.noreply.github.com",
+        "198982749+Copilot@users.noreply.github.com"
+      ],
+      "notes": "Copilot coding agent sessions, PRs opened by Copilot, and commits co-authored by Copilot."
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "kind": "agent",
+      "vendor": "Anthropic",
+      "logins": [
+        "claude[bot]"
+      ],
+      "branch_prefixes": [
+        "claude/"
+      ],
+      "emails": [
+        "noreply@anthropic.com"
+      ],
+      "body_patterns": [
+        "generated with \\[?claude code"
+      ]
+    },
+    {
+      "id": "openai-codex",
+      "name": "OpenAI Codex",
+      "kind": "agent",
+      "vendor": "OpenAI",
+      "logins": [
+        "chatgpt-codex-connector[bot]"
+      ],
+      "branch_prefixes": [
+        "codex/"
+      ]
+    },
+    {
+      "id": "cursor-agent",
+      "name": "Cursor agent",
+      "kind": "agent",
+      "vendor": "Anysphere",
+      "logins": [
+        "cursor[bot]"
+      ],
+      "branch_prefixes": [
+        "cursor/"
+      ],
+      "emails": [
+        "cursoragent@cursor.com"
+      ]
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "kind": "agent",
+      "vendor": "Cognition",
+      "logins": [
+        "devin-ai-integration[bot]"
+      ],
+      "branch_prefixes": [
+        "devin/"
+      ]
+    },
+    {
+      "id": "jules",
+      "name": "Jules",
+      "kind": "agent",
+      "vendor": "Google",
+      "logins": [
+        "google-labs-jules[bot]"
+      ]
+    },
+    {
+      "id": "amazon-q",
+      "name": "Amazon Q Developer",
+      "kind": "agent",
+      "vendor": "AWS",
+      "logins": [
+        "amazon-q-developer[bot]"
+      ]
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "kind": "agent",
+      "emails": [
+        "noreply@aider.chat"
+      ]
+    },
+    {
+      "id": "gh-aw",
+      "name": "GitHub Agentic Workflows",
+      "kind": "agent",
+      "vendor": "GitHub",
+      "workflow_path_suffixes": [
+        ".lock.yml"
+      ],
+      "body_patterns": [
+        "<!--\\s*gh-aw-agentic-workflow:"
+      ],
+      "notes": "gh aw compiles Markdown workflows into .lock.yml files; runs of those files are the agent itself executing. PRs it opens are authored by github-actions[bot] and carry a gh-aw-agentic-workflow marker."
+    },
+    {
+      "id": "dependabot",
+      "name": "Dependabot",
+      "kind": "bot",
+      "vendor": "GitHub",
+      "workflow_paths": [
+        "dynamic/dependabot"
+      ],
+      "logins": [
+        "dependabot[bot]"
+      ],
+      "branch_prefixes": [
+        "dependabot/"
+      ]
+    },
+    {
+      "id": "renovate",
+      "name": "Renovate",
+      "kind": "bot",
+      "vendor": "Mend",
+      "logins": [
+        "renovate[bot]"
+      ],
+      "branch_prefixes": [
+        "renovate/"
+      ]
+    },
+    {
+      "id": "github-actions",
+      "name": "github-actions",
+      "kind": "bot",
+      "vendor": "GitHub",
+      "logins": [
+        "github-actions[bot]"
+      ]
+    },
+    {
+      "id": "pre-commit-ci",
+      "name": "pre-commit.ci",
+      "kind": "bot",
+      "logins": [
+        "pre-commit-ci[bot]"
+      ]
+    },
+    {
+      "id": "release-please",
+      "name": "release-please",
+      "kind": "bot",
+      "vendor": "Google",
+      "branch_prefixes": [
+        "release-please--"
+      ]
+    },
+    {
+      "id": "mergify",
+      "name": "Mergify",
+      "kind": "bot",
+      "logins": [
+        "mergify[bot]"
+      ]
+    }
+  ]
+}

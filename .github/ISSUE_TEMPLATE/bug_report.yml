@@ -1,0 +1,24 @@
+name: Bug report
+description: Something is wrong with numbers, output or a crash.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the command you ran and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: Redact private repository or people names if needed.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: ciblame version
+      placeholder: output of `ciblame version`
+    validations:
+      required: true

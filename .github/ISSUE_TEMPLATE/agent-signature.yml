@@ -1,0 +1,37 @@
+name: Add or fix an agent signature
+description: ciblame doesn't recognise an AI agent or bot, or attributes it wrongly.
+labels: ["signature", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Signatures live in `internal/classify/signatures.json`. If you're comfortable with a small PR, see CONTRIBUTING.md — otherwise this form is enough.
+  - type: input
+    id: agent
+    attributes:
+      label: Agent or bot
+      placeholder: e.g. Jules, Factory Droid, an in-house bot
+    validations:
+      required: true
+  - type: textarea
+    id: signals
+    attributes:
+      label: How can its runs be recognised?
+      description: Account login, branch prefix, commit trailer or e-mail, PR body text, workflow path. Exact strings help most.
+      placeholder: |
+        PRs are opened by `example-agent[bot]` on branches named `example/<task>`.
+        Commits carry `Co-authored-by: Example Agent <agent@example.com>`.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Links to a public PR, commit or workflow run, or the vendor's documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Output of `ciblame why <run-url>` (optional)
+      render: text

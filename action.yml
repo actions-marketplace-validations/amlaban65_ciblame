@@ -1,0 +1,77 @@
+name: ciblame
+description: Attribute GitHub Actions minutes and cost to the AI agents, bots and humans that triggered them.
+author: Ahmed Laban
+branding:
+  icon: pie-chart
+  color: purple
+
+inputs:
+  repos:
+    description: Space-separated owner/name repositories to report on. Defaults to the current repository.
+    default: ${{ github.repository }}
+  org:
+    description: Report on every active repository of this org or user instead of `repos` (needs a token that can read them).
+    default: ""
+  since:
+    description: Start of the window, e.g. 7d, 30d or 2026-10-01.
+    default: 7d
+  args:
+    description: Extra ciblame flags, e.g. "--by workflow --rate macos-15-xlarge=0.10".
+    default: ""
+  token:
+    description: Token with read access to Actions and pull requests.
+    default: ${{ github.token }}
+  summary:
+    description: Append the Markdown report to the job summary.
+    default: "true"
+
+outputs:
+  report:
+    description: Path to the Markdown report.
+    value: ${{ steps.report.outputs.report }}
+  json:
+    description: Path to the JSON report (with per-run records).
+    value: ${{ steps.report.outputs.json }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-go@v5
+      with:
+        go-version-file: ${{ github.action_path }}/go.mod
+        cache: false
+
+    - name: Build ciblame
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: go build -trimpath -o "$RUNNER_TEMP/ciblame" ./cmd/ciblame
+
+    - name: Generate report
+      id: report
+      shell: bash
+      # Inputs are passed through the environment, never interpolated into the script.
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+        INPUT_REPOS: ${{ inputs.repos }}
+        INPUT_ORG: ${{ inputs.org }}
+        INPUT_SINCE: ${{ inputs.since }}
+        INPUT_ARGS: ${{ inputs.args }}
+        INPUT_SUMMARY: ${{ inputs.summary }}
+      run: |
+        set -euo pipefail
+        if [ -n "$INPUT_ORG" ]; then
+          target=(--org "$INPUT_ORG")
+        else
+          read -ra target <<< "$INPUT_REPOS"
+        fi
+        read -ra extra <<< "$INPUT_ARGS"
+        md="$RUNNER_TEMP/ciblame.md"
+        json="$RUNNER_TEMP/ciblame.json"
+        "$RUNNER_TEMP/ciblame" --quiet --since "$INPUT_SINCE" --format json --records "${extra[@]}" "${target[@]}" > "$json"
+        # The second run reuses cached jobs and pull requests from the first.
+        "$RUNNER_TEMP/ciblame" --quiet --since "$INPUT_SINCE" --format markdown "${extra[@]}" "${target[@]}" > "$md"
+        if [ "$INPUT_SUMMARY" = "true" ]; then
+          cat "$md" >> "$GITHUB_STEP_SUMMARY"
+        fi
+        echo "report=$md" >> "$GITHUB_OUTPUT"
+        echo "json=$json" >> "$GITHUB_OUTPUT"

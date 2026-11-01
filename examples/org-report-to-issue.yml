@@ -1,0 +1,35 @@
+# Monthly org-wide report posted as an issue.
+# The default GITHUB_TOKEN can only read the current repository, so this uses
+# a fine-grained token (secret CIBLAME_TOKEN) with read-only access to
+# "Actions" and "Pull requests" on the repositories you want covered.
+name: Org CI cost report
+
+on:
+  schedule:
+    - cron: "23 9 1 * *" # 1st of the month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - id: ciblame
+        uses: amlaban65/ciblame@main
+        with:
+          org: ${{ github.repository_owner }}
+          since: 30d
+          token: ${{ secrets.CIBLAME_TOKEN }}
+
+      - name: Open an issue with the report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ steps.ciblame.outputs.report }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "CI cost report: $(date -u '+%B %Y')" \
+            --body-file "$REPORT"

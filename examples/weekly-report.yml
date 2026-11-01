@@ -1,0 +1,22 @@
+# Weekly CI cost report for this repository, written to the job summary.
+# Copy to .github/workflows/ci-cost.yml.
+name: CI cost report
+
+on:
+  schedule:
+    - cron: "17 8 * * 1" # Mondays 08:17 UTC
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  pull-requests: read
+  contents: read
+
+jobs:
+  ciblame:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: amlaban65/ciblame@main
+        with:
+          since: 7d
