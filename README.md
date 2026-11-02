@@ -3,6 +3,7 @@
 **`git blame` for your CI bill.** ciblame is a command-line tool that shows how many GitHub Actions minutes and dollars go to AI coding agents (GitHub Copilot, Claude Code, OpenAI Codex, Devin, Cursor), to bots like Dependabot and Renovate, and to the people on your team.
 
 [![CI](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml/badge.svg)](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/ciblame.svg)](https://www.npmjs.com/package/ciblame)
 [![Go Reference](https://pkg.go.dev/badge/github.com/amlaban65/ciblame.svg)](https://pkg.go.dev/github.com/amlaban65/ciblame)
 [![Go Report Card](https://goreportcard.com/badge/github.com/amlaban65/ciblame)](https://goreportcard.com/report/github.com/amlaban65/ciblame)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -29,7 +30,14 @@ ciblame answers the questions finance will eventually ask:
 
 ## Quick start
 
-Download a binary for Linux, macOS or Windows (x64 and arm64) from the [releases page](https://github.com/amlaban65/ciblame/releases), or on Linux:
+Try it without installing anything (needs Node.js):
+
+```sh
+npx ciblame --demo             # sample report, no token needed
+npx ciblame your-org/your-repo # last 30 days of a real repo
+```
+
+Or install it with `npm install -g ciblame`, or download a binary for Linux, macOS or Windows (x64 and arm64) from the [releases page](https://github.com/amlaban65/ciblame/releases). On Linux:
 
 ```sh
 curl -fsSL https://github.com/amlaban65/ciblame/releases/download/v0.1.0/ciblame_0.1.0_linux_amd64.tar.gz | tar xz ciblame

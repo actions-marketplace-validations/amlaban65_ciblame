@@ -41,9 +41,8 @@ BLAME = [
 TOTAL_MIN = 20849
 
 QUICKSTART = (
-    "curl -fsSL %s/releases/download/v%s/ciblame_%s_linux_amd64.tar.gz | tar xz ciblame\n"
-    "./ciblame --demo                # sample report, no token needed\n"
-    "./ciblame your-org/your-repo    # last 30 days of a real repo" % (REPO, VERSION, VERSION)
+    "npx ciblame --demo               # sample report, no token needed\n"
+    "npx ciblame your-org/your-repo   # last 30 days of a real repo"
 )
 GO = "go run github.com/amlaban65/ciblame/cmd/ciblame@latest --demo"
 
@@ -156,7 +155,7 @@ def tool_aside():
   and shows the minutes, the estimated cost, how often runs failed, and how much CI it took to merge each change.
   It only reads, and your token never leaves your machine.</p>
   <pre><code>%s</code></pre>
-  <p class="small">Or with Go: <code>%s</code>. Binaries for macOS, Windows and Linux are on the <a href="%s/releases">releases page</a>.</p>
+  <p class="small">Needs Node.js. Or with Go: <code>%s</code>. Binaries for macOS, Windows and Linux are on the <a href="%s/releases">releases page</a>.</p>
 </aside>""" % (esc(QUICKSTART), esc(GO), REPO)
 
 
@@ -172,8 +171,8 @@ def build_index(guides):
   <p>One binary, no setup. It finds a token in <code>GITHUB_TOKEN</code>, <code>GH_TOKEN</code> or your GitHub CLI login,
   and only reads runs, jobs and pull requests.</p>
   <pre><code>{quick}</code></pre>
-  <p class="small">Or with Go 1.23+: <code>{go}</code>. Binaries for macOS, Windows and Linux are on the
-  <a href="{repo}/releases">releases page</a>, and a <a href="{repo}#run-it-weekly-in-github-actions">GitHub Action</a>
+  <p class="small">Needs Node.js. Or install it with <code>npm install -g ciblame</code>, use Go 1.23+ (<code>{go}</code>),
+  or download a binary for macOS, Windows or Linux from the <a href="{repo}/releases">releases page</a>. A <a href="{repo}#run-it-weekly-in-github-actions">GitHub Action</a>
   posts a report every week.</p>
 </section>
 <section class="questions">
