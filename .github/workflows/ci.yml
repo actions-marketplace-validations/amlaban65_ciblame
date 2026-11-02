@@ -13,6 +13,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  actionlint:
+    name: workflow lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      # actionlint does not fully validate composite action.yml; the action job
+      # below remains the execution smoke test for the composite action.
+      - name: Lint workflows and examples
+        run: |
+          docker run --rm --network none \
+            -v "$PWD:/repo:ro" -w /repo \
+            rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9 \
+            -color .github/workflows/*.yml examples/*.yml
+
   test:
     name: test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
