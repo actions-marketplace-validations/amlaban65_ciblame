@@ -11,8 +11,9 @@ const PACKAGES = {
   "darwin-x64": "ciblame-darwin-x64",
   "linux-arm64": "ciblame-linux-arm64",
   "linux-x64": "ciblame-linux-x64",
-  "win32-arm64": "ciblame-win32-arm64",
-  "win32-x64": "ciblame-win32-x64",
+  // Scoped: npm's spam filter rejects the unscoped ciblame-win32-* names.
+  "win32-arm64": "@amlaban/ciblame-win32-arm64",
+  "win32-x64": "@amlaban/ciblame-win32-x64",
 };
 
 function fail(msg) {

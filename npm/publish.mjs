@@ -3,8 +3,9 @@
 //
 // It takes the archives goreleaser attached to the GitHub release, checks
 // them against checksums.txt, and wraps each binary in a per-platform
-// package (ciblame-<os>-<cpu>). The main `ciblame` package depends on all of
-// them as optional dependencies; npm installs only the one that matches.
+// package (ciblame-<os>-<cpu>, or @amlaban/ciblame-win32-<cpu> for Windows).
+// The main `ciblame` package depends on all of them as optional dependencies;
+// npm installs only the one that matches.
 //
 // Usage:
 //   node npm/publish.mjs --tag v0.1.0                 # download, build, publish
@@ -25,14 +26,17 @@ const REPO = "amlaban65/ciblame";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
 
-// Go GOOS/GOARCH -> Node process.platform/process.arch.
+// Go GOOS/GOARCH -> Node process.platform/process.arch, and the npm package
+// that carries each binary. The Windows packages live under the maintainer's
+// scope because npm's spam filter rejects the unscoped ciblame-win32-* names.
+// Keep these names in sync with npm/ciblame/bin/ciblame.js.
 const TARGETS = [
-  { goos: "darwin", goarch: "arm64", os: "darwin", cpu: "arm64", label: "macOS (Apple silicon)" },
-  { goos: "darwin", goarch: "amd64", os: "darwin", cpu: "x64", label: "macOS (Intel)" },
-  { goos: "linux", goarch: "arm64", os: "linux", cpu: "arm64", label: "Linux (arm64)" },
-  { goos: "linux", goarch: "amd64", os: "linux", cpu: "x64", label: "Linux (x64)" },
-  { goos: "windows", goarch: "arm64", os: "win32", cpu: "arm64", label: "Windows (arm64)" },
-  { goos: "windows", goarch: "amd64", os: "win32", cpu: "x64", label: "Windows (x64)" },
+  { goos: "darwin", goarch: "arm64", os: "darwin", cpu: "arm64", pkg: "ciblame-darwin-arm64", label: "macOS (Apple silicon)" },
+  { goos: "darwin", goarch: "amd64", os: "darwin", cpu: "x64", pkg: "ciblame-darwin-x64", label: "macOS (Intel)" },
+  { goos: "linux", goarch: "arm64", os: "linux", cpu: "arm64", pkg: "ciblame-linux-arm64", label: "Linux (arm64)" },
+  { goos: "linux", goarch: "amd64", os: "linux", cpu: "x64", pkg: "ciblame-linux-x64", label: "Linux (x64)" },
+  { goos: "windows", goarch: "arm64", os: "win32", cpu: "arm64", pkg: "@amlaban/ciblame-win32-arm64", label: "Windows (arm64)" },
+  { goos: "windows", goarch: "amd64", os: "win32", cpu: "x64", pkg: "@amlaban/ciblame-win32-x64", label: "Windows (x64)" },
 ];
 
 function parseArgs(argv) {
@@ -107,7 +111,7 @@ function absolutizeReadme(md, tag) {
 }
 
 function platformPackage(t, version, dir) {
-  const name = `ciblame-${t.os}-${t.cpu}`;
+  const name = t.pkg;
   writeJSON(path.join(dir, "package.json"), {
     name,
     version,
@@ -207,7 +211,7 @@ async function main() {
   fs.mkdirSync(opts.out, { recursive: true });
 
   const sums = parseChecksums((await fetchAsset(opts, "checksums.txt")).toString("utf8"));
-  const names = [];
+  const platforms = []; // { name, dir }
   for (const t of TARGETS) {
     const ext = t.goos === "windows" ? "zip" : "tar.gz";
     const archiveName = `ciblame_${opts.version}_${t.goos}_${t.goarch}.${ext}`;
@@ -220,17 +224,17 @@ async function main() {
     const dir = path.join(opts.out, `ciblame-${t.os}-${t.cpu}`);
     const exe = t.goos === "windows" ? "ciblame.exe" : "ciblame";
     extractBinary(archive, archiveName, exe, path.join(dir, "bin"));
-    names.push(platformPackage(t, opts.version, dir));
+    platforms.push({ name: platformPackage(t, opts.version, dir), dir });
   }
   const mainDir = path.join(opts.out, "ciblame");
-  mainPackage(opts.version, names, mainDir);
+  mainPackage(opts.version, platforms.map((p) => p.name), mainDir);
 
   // Platform packages first, so the main package never points at missing
   // versions. Pause between publishes: npm's spam filter flags new accounts
   // that create several similarly named packages within seconds.
   const pause = Number(process.env.PUBLISH_DELAY_SECONDS ?? 45) * 1000;
-  for (const n of names) {
-    if (publish(path.join(opts.out, n), n, opts) && pause > 0) await sleep(pause);
+  for (const p of platforms) {
+    if (publish(p.dir, p.name, opts) && pause > 0) await sleep(pause);
   }
   publish(mainDir, "ciblame", opts);
 }
