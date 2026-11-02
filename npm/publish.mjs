@@ -156,21 +156,46 @@ function alreadyPublished(name, version) {
   }
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Returns true when it actually published (false when skipped), so the caller
+// knows whether to pause before the next package.
 function publish(dir, name, opts) {
   if (opts.packOnly) {
     const out = execFileSync("npm", ["pack", dir, "--pack-destination", opts.out], { encoding: "utf8" });
     console.log(`packed ${out.trim().split("\n").pop()}`);
-    return;
+    return false;
   }
   if (!opts.dryRun && alreadyPublished(name, opts.version)) {
     console.log(`skip ${name}@${opts.version} (already on npm)`);
-    return;
+    return false;
   }
   const args = ["publish", dir, "--access", "public"];
   if (opts.dryRun) args.push("--dry-run");
   if (process.env.GITHUB_ACTIONS === "true" && !opts.dryRun) args.push("--provenance");
-  execFileSync("npm", args, { stdio: "inherit" });
+  try {
+    const out = execFileSync("npm", args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+    process.stdout.write(out);
+  } catch (err) {
+    const output = `${err.stdout || ""}${err.stderr || ""}`;
+    process.stdout.write(output);
+    // A version still being processed by npm doesn't show in `npm view` yet,
+    // so a re-run can hit it again; that's a skip, not a failure.
+    if (/previously published|cannot publish over|EPUBLISHCONFLICT/i.test(output)) {
+      console.log(`skip ${name}@${opts.version} (already on npm)`);
+      return false;
+    }
+    if (/spam detection/i.test(output)) {
+      throw new Error(
+        `npm's spam filter blocked ${name}. This happens to new accounts publishing several ` +
+          "packages at once. Re-run this workflow in a few hours (published packages are skipped), " +
+          "or ask npm support to review the account."
+      );
+    }
+    throw new Error(`npm publish failed for ${name}`);
+  }
   console.log(`${opts.dryRun ? "checked" : "published"} ${name}@${opts.version}`);
+  return !opts.dryRun;
 }
 
 async function main() {
@@ -200,8 +225,13 @@ async function main() {
   const mainDir = path.join(opts.out, "ciblame");
   mainPackage(opts.version, names, mainDir);
 
-  // Platform packages first, so the main package never points at missing versions.
-  for (const n of names) publish(path.join(opts.out, n), n, opts);
+  // Platform packages first, so the main package never points at missing
+  // versions. Pause between publishes: npm's spam filter flags new accounts
+  // that create several similarly named packages within seconds.
+  const pause = Number(process.env.PUBLISH_DELAY_SECONDS ?? 45) * 1000;
+  for (const n of names) {
+    if (publish(path.join(opts.out, n), n, opts) && pause > 0) await sleep(pause);
+  }
   publish(mainDir, "ciblame", opts);
 }
 
