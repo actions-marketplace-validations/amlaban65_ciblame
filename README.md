@@ -3,7 +3,6 @@
 **`git blame` for your CI bill.** ciblame is a command-line tool that shows how many GitHub Actions minutes and dollars go to AI coding agents (GitHub Copilot, Claude Code, OpenAI Codex, Devin, Cursor), to bots like Dependabot and Renovate, and to the people on your team.
 
 [![CI](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml/badge.svg)](https://github.com/amlaban65/ciblame/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/ciblame.svg)](https://www.npmjs.com/package/ciblame)
 [![Go Reference](https://pkg.go.dev/badge/github.com/amlaban65/ciblame.svg)](https://pkg.go.dev/github.com/amlaban65/ciblame)
 [![Go Report Card](https://goreportcard.com/badge/github.com/amlaban65/ciblame)](https://goreportcard.com/report/github.com/amlaban65/ciblame)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -11,6 +10,8 @@
 <img src="docs/demo.svg" alt="ciblame report: AI agents used 73% of CI minutes; Copilot 45%, humans 17%, Claude Code 16%; 5,127 agent minutes went to PRs closed without merging" width="100%">
 
 <sub>Output of <code>ciblame --demo</code>, a month of generated activity on a fictional repo.</sub>
+
+Guides: [how much Actions AI coding agents use](https://amlaban65.github.io/ciblame/guides/ai-coding-agents-github-actions-cost/), [GitHub Actions pricing in 2026](https://amlaban65.github.io/ciblame/guides/github-actions-pricing/), [why the bill is higher than expected](https://amlaban65.github.io/ciblame/guides/github-actions-bill-higher-than-expected/) and [how to reduce Actions minutes](https://amlaban65.github.io/ciblame/guides/reduce-github-actions-minutes/).
 
 ## Why
 
@@ -28,21 +29,22 @@ ciblame answers the questions finance will eventually ask:
 
 ## Quick start
 
-Try it without installing anything (needs Node.js):
+Download a binary for Linux, macOS or Windows (x64 and arm64) from the [releases page](https://github.com/amlaban65/ciblame/releases), or on Linux:
 
 ```sh
-npx ciblame --demo             # sample report, no token needed
-npx ciblame your-org/your-repo # last 30 days of a real repo
+curl -fsSL https://github.com/amlaban65/ciblame/releases/download/v0.1.0/ciblame_0.1.0_linux_amd64.tar.gz | tar xz ciblame
+./ciblame --demo                # sample report, no token needed
+./ciblame your-org/your-repo    # last 30 days of a real repo
 ```
 
-Or install it:
+With Go 1.23 or newer:
 
 ```sh
-npm install -g ciblame                                    # prebuilt binary via npm
-go install github.com/amlaban65/ciblame/cmd/ciblame@latest  # or build with Go
+go run github.com/amlaban65/ciblame/cmd/ciblame@latest --demo   # try it without installing
+go install github.com/amlaban65/ciblame/cmd/ciblame@latest
 ```
 
-Binaries for macOS, Linux and Windows (x64 and arm64) are also on the [releases page](https://github.com/amlaban65/ciblame/releases).
+To get a report every week without installing anything, use the [GitHub Action](#run-it-weekly-in-github-actions).
 
 ciblame finds a token in `GITHUB_TOKEN`, `GH_TOKEN`, or your [GitHub CLI](https://cli.github.com) login. It only reads: Actions runs and jobs, pull requests, and repository metadata.
 
