@@ -12,6 +12,8 @@
 
 <sub>Output of <code>ciblame --demo</code>, a month of generated activity on a fictional repo.</sub>
 
+Guides: [how much Actions AI coding agents use](https://amlaban65.github.io/ciblame/guides/ai-coding-agents-github-actions-cost/), [GitHub Actions pricing in 2026](https://amlaban65.github.io/ciblame/guides/github-actions-pricing/), [why the bill is higher than expected](https://amlaban65.github.io/ciblame/guides/github-actions-bill-higher-than-expected/) and [how to reduce Actions minutes](https://amlaban65.github.io/ciblame/guides/reduce-github-actions-minutes/).
+
 ## Why
 
 AI coding agents use CI as their test loop. Each attempt at getting the build green is another workflow run, and a single agent PR can rack up dozens of them.
@@ -35,14 +37,22 @@ npx ciblame --demo             # sample report, no token needed
 npx ciblame your-org/your-repo # last 30 days of a real repo
 ```
 
-Or install it:
+Or install it with `npm install -g ciblame`, or download a binary for Linux, macOS or Windows (x64 and arm64) from the [releases page](https://github.com/amlaban65/ciblame/releases). On Linux:
 
 ```sh
-npm install -g ciblame                                    # prebuilt binary via npm
-go install github.com/amlaban65/ciblame/cmd/ciblame@latest  # or build with Go
+curl -fsSL https://github.com/amlaban65/ciblame/releases/download/v0.1.0/ciblame_0.1.0_linux_amd64.tar.gz | tar xz ciblame
+./ciblame --demo                # sample report, no token needed
+./ciblame your-org/your-repo    # last 30 days of a real repo
 ```
 
-Binaries for macOS, Linux and Windows (x64 and arm64) are also on the [releases page](https://github.com/amlaban65/ciblame/releases).
+With Go 1.23 or newer:
+
+```sh
+go run github.com/amlaban65/ciblame/cmd/ciblame@latest --demo   # try it without installing
+go install github.com/amlaban65/ciblame/cmd/ciblame@latest
+```
+
+To get a report every week without installing anything, use the [GitHub Action](#run-it-weekly-in-github-actions).
 
 ciblame finds a token in `GITHUB_TOKEN`, `GH_TOKEN`, or your [GitHub CLI](https://cli.github.com) login. It only reads: Actions runs and jobs, pull requests, and repository metadata.
 
